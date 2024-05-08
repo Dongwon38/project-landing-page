@@ -1,0 +1,323 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+mobile - 360px  22.5em
+desktop - from 700px 43.75em
+----------------------------------------------------------------
+# Generic (CALLED IN ANOTHER FILE)
+	- Normalize
+	- Box sizing
+	- Media width
+# Base
+	- Typography
+	- Elements
+	- Links
+# Layouts
+# Components
+	- Header
+	- Main
+	- Footer
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+
+/* Typography
+--------------------------------------------- */
+
+/* * {
+  border: 1px solid white;
+} */
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 2;
+  color: #e2e2e2;
+  background-color: #202124;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  margin: 0;
+}
+
+h1 {
+  font-size: 2.25rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+p {
+}
+
+.catch {
+  font-size: 2rem;
+}
+
+/* Elements
+--------------------------------------------- */
+ul {
+  list-style-type: none;
+}
+
+ol {
+}
+
+dl {
+}
+
+figure {
+}
+
+table {
+}
+
+/* Links
+--------------------------------------------- */
+a,
+a:hover,
+a:visited,
+a:focus,
+a:active {
+  color: #e2e2e2;
+  text-decoration: none;
+}
+
+a {
+}
+
+a:visited {
+}
+
+a:hover {
+}
+
+a:focus {
+}
+
+a:active {
+}
+
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+
+.site-wrapper {
+  max-width: 125rem;
+  margin: 0 auto;
+  background: linear-gradient(#202124 70%, #000 90%);
+}
+
+/*--------------------------------------------------------------
+# Components ++ 1 general  + 2 mobile + 3 desktop @media query task
+--------------------------------------------------------------*/
+
+/* Header ++ 1 general  + 2 mobile + 3 desktop @media query task
+--------------------------------------------- */
+/* 1 general ==================== */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #202124;
+  opacity: 0.9;
+  box-shadow: 0 5px 15px 1px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+.site-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    padding: 0 auto;
+    margin: 0.5rem;
+    max-width: 2.5rem;
+  }
+}
+
+.site-nav ul {
+  display: flex;
+  list-style-type: none;
+  gap: 1rem;
+  margin: 0 1rem;
+}
+
+/* 2 Mobile ==================== */
+
+.site-nav ul {
+}
+
+h2 {
+  text-align: center;
+}
+
+/* 3 Desktop ==================== */
+@media (min-width: 31.25em) {
+}
+
+/* Main ++ 1 general  + 2 mobile + 3 desktop @media query task
+--------------------------------------------- */
+/* 1 general ==================== */
+
+.project-wrapper {
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.project {
+  margin-bottom: 5rem;
+  .project-categories {
+    margin-bottom: 0.25rem;
+    .project-skills,
+    .project-concepts {
+      display: flex;
+    }
+    .project-tag {
+      font-size: 0.5rem;
+      padding: 0.05rem 0.25rem;
+      min-width: 2rem;
+      text-align: center;
+      color: white;
+      text-shadow: none;
+      border-radius: 5%;
+      margin: 0.15rem 0.15rem;
+    }
+    .htmlcss {
+      background-color: #dd4b25;
+    }
+    .js {
+      background-color: #f29727;
+    }
+    .wordpress {
+      background-color: #207196;
+    }
+    .onlinestore {
+      background-color: #cd016d;
+    }
+  }
+  .project-box {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 5%;
+    color: #fff;
+    border: 2px solid gray;
+    /* box-shadow: 5px 5px 5px rgb(170, 170, 170); */
+    margin-bottom: 0.5rem;
+    img {
+      border-radius: 5%;
+    }
+  }
+  h3 {
+    text-align: center;
+  }
+}
+
+.impact-box {
+  padding: 10rem;
+  max-width: 100rem;
+  margin: 0 auto;
+}
+
+.section-about {
+  min-width: 10rem;
+}
+
+/* 2 Mobile ==================== */
+
+.project {
+  max-width: 20rem;
+}
+
+.section-about {
+  padding: 0 3rem;
+  .section-about-comment {
+    padding-bottom: 3rem;
+  }
+  h2 {
+    text-align: left;
+  }
+}
+
+/* 3 Desktop ==================== */
+@media (min-width: 43.75em) {
+  .section-projects {
+    max-width: 100rem;
+    margin: 0 auto;
+  }
+
+  .section-about {
+    max-width: 100rem;
+    margin: 0 auto;
+    .section-about-box {
+      max-width: 100rem;
+      display: flex;
+      justify-content: space-between;
+
+      gap: 1rem;
+      div {
+        width: calc(50% - 1rem);
+      }
+      p,
+      img {
+        max-width: 35rem;
+      }
+    }
+  }
+}
+
+/* Footer ++ 1 general  + 2 mobile + 3 desktop @media query task
+--------------------------------------------- */
+/* 1 general ==================== */
+.site-footer {
+  background-color: #000;
+
+  .link-icon {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    font-size: 1.5rem;
+  }
+}
+
+/* 2 Mobile ==================== */
+
+.site-footer {
+  padding: 3rem 3rem 2rem 3rem;
+  p {
+    margin: 0;
+  }
+  address {
+    margin: 1rem 0;
+  }
+}
+
+/* 3 Desktop ==================== */
+
+@media (min-width: 31.25em) {
+  .site-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 3rem 1rem 3rem;
+  }
+}
