@@ -25,10 +25,6 @@ desktop - from 700px 43.75em
 /* Typography
 --------------------------------------------- */
 
-/* * {
-  border: 1px solid white;
-} */
-
 body {
   font-family: "Open Sans", sans-serif;
   font-size: 1rem;
@@ -94,9 +90,11 @@ a:focus,
 a:active {
   color: #e2e2e2;
   text-decoration: none;
+  transition: 0.3s;
 }
 
 a {
+  line-height: 1;
 }
 
 a:visited {
@@ -105,10 +103,27 @@ a:visited {
 a:hover {
 }
 
+footer a:hover,
+section-contact a {
+  background-color: #226b05;
+  color: white;
+  border-radius: 0.5rem;
+}
+
+nav a:hover {
+  border-bottom: 5px solid #226b05;
+}
+
 a:focus {
 }
 
 a:active {
+  opacity: 0.5;
+  transition: 0.1s;
+}
+
+.site-footer a {
+  padding: 1rem;
 }
 
 /*--------------------------------------------------------------
@@ -137,6 +152,7 @@ a:active {
   box-shadow: 0 5px 15px 1px rgba(0, 0, 0, 0.5);
   position: fixed;
   width: 100%;
+  max-width: 125rem;
   top: 0;
 }
 
@@ -160,15 +176,29 @@ a:active {
 
 /* 2 Mobile ==================== */
 
-.site-nav ul {
-}
-
-h2 {
-  text-align: center;
+.site-nav {
+  .mobile {
+    display: flex;
+    li {
+      padding: 0 0.5rem;
+    }
+  }
+  .desktop {
+    display: none;
+  }
 }
 
 /* 3 Desktop ==================== */
-@media (min-width: 31.25em) {
+@media (min-width: 40em) {
+  .site-nav {
+    .mobile {
+      display: none;
+    }
+    .desktop {
+      display: flex;
+      margin-right: 2rem;
+    }
+  }
 }
 
 /* Main ++ 1 general  + 2 mobile + 3 desktop @media query task
@@ -193,7 +223,7 @@ h2 {
     }
     .project-tag {
       font-size: 0.5rem;
-      padding: 0.05rem 0.25rem;
+      padding: 0.3rem 0.25rem;
       min-width: 2rem;
       text-align: center;
       color: white;
@@ -240,8 +270,45 @@ h2 {
 .section-about {
   min-width: 10rem;
 }
+.section-contact {
+  display: flex;
+  flex-direction: column;
+  table,
+  p {
+    padding: 0;
+    margin: 0;
+  }
+  table {
+    margin-bottom: 1rem;
+  }
+  i {
+    padding-right: 1rem;
+  }
 
+  a {
+    padding: 1rem;
+    max-width: 8rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    background-color: #e2e2e2;
+    color: #202124;
+  }
+  a:hover {
+    background-color: yellow;
+    color: #202124;
+    border-radius: 0.5rem;
+  }
+}
+.project-categories.project-tag {
+  padding: 1rem;
+}
 /* 2 Mobile ==================== */
+
+.section-projects {
+  h2 {
+    text-align: center;
+  }
+}
 
 .project {
   max-width: 20rem;
@@ -249,8 +316,9 @@ h2 {
 
 .section-about {
   padding: 0 3rem;
+
   .section-about-comment {
-    padding-bottom: 3rem;
+    padding-bottom: 0.5rem;
   }
   h2 {
     text-align: left;
@@ -258,10 +326,14 @@ h2 {
 }
 
 /* 3 Desktop ==================== */
-@media (min-width: 43.75em) {
+@media (min-width: 50em) {
   .section-projects {
     max-width: 100rem;
     margin: 0 auto;
+    h2 {
+      text-align: left;
+      padding: 0 5rem;
+    }
   }
 
   .section-about {
@@ -271,7 +343,6 @@ h2 {
       max-width: 100rem;
       display: flex;
       justify-content: space-between;
-
       gap: 1rem;
       div {
         width: calc(50% - 1rem);
@@ -312,7 +383,7 @@ h2 {
 
 /* 3 Desktop ==================== */
 
-@media (min-width: 31.25em) {
+@media (min-width: 50em) {
   .site-footer {
     display: flex;
     justify-content: space-between;
