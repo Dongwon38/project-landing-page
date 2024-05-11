@@ -56,29 +56,18 @@ h3 {
   font-size: 1.25rem;
 }
 
-p {
-}
-
-.catch {
-  font-size: 2rem;
-}
-
 /* Elements
 --------------------------------------------- */
+
+/* scroll bar */
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
 ul {
   list-style-type: none;
-}
-
-ol {
-}
-
-dl {
-}
-
-figure {
-}
-
-table {
 }
 
 /* Links
@@ -97,12 +86,6 @@ a {
   line-height: 1;
 }
 
-a:visited {
-}
-
-a:hover {
-}
-
 footer a:hover,
 section-contact a {
   background-color: #226b05;
@@ -114,9 +97,6 @@ nav a:hover {
   border-bottom: 5px solid #226b05;
 }
 
-a:focus {
-}
-
 a:active {
   opacity: 0.5;
   transition: 0.1s;
@@ -124,6 +104,14 @@ a:active {
 
 .site-footer a {
   padding: 1rem;
+}
+
+.section-contact:hover,
+.section-about-comment:hover {
+  b {
+    color: #ffee2e;
+    transition: 1s;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -134,6 +122,27 @@ a:active {
   max-width: 125rem;
   margin: 0 auto;
   background: linear-gradient(#202124 70%, #000 90%);
+}
+
+.section-projects,
+.section-header {
+  position: relative;
+  margin-bottom: 5rem;
+}
+
+.section-header::after,
+.section-projects::after {
+  content: "";
+  display: block;
+  width: 60%;
+  max-width: 20rem;
+  height: 0.1rem;
+  margin: 0 auto;
+  background-color: #888888;
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
 }
 
 /*--------------------------------------------------------------
@@ -154,6 +163,7 @@ a:active {
   width: 100%;
   max-width: 125rem;
   top: 0;
+  z-index: 10;
 }
 
 .site-logo {
@@ -180,7 +190,7 @@ a:active {
   .mobile {
     display: flex;
     li {
-      padding: 0 0.5rem;
+      padding: 0 0.3rem;
     }
   }
   .desktop {
@@ -205,16 +215,35 @@ a:active {
 --------------------------------------------- */
 /* 1 general ==================== */
 
+.site-main {
+  margin-top: 5rem;
+}
+
+.section-header h1,
+.section-header p {
+  margin-left: 3rem;
+}
+
+h1 {
+  margin-bottom: 3rem;
+}
+
+.impact-box {
+  padding: 5rem 0;
+  line-height: 1.5;
+}
+
 .project-wrapper {
-  padding: 2rem;
+  max-width: 70rem;
+  padding-left: 3rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 2rem;
 }
 
 .project {
-  margin-bottom: 5rem;
+  max-width: 12rem;
+  margin-bottom: 3rem;
   .project-categories {
     margin-bottom: 0.25rem;
     .project-skills,
@@ -231,6 +260,7 @@ a:active {
       border-radius: 5%;
       margin: 0.15rem 0.15rem;
     }
+
     .htmlcss {
       background-color: #dd4b25;
     }
@@ -245,26 +275,14 @@ a:active {
     }
   }
   .project-box {
-    width: 15rem;
-    height: 15rem;
-    border-radius: 5%;
-    color: #fff;
-    border: 2px solid gray;
-    /* box-shadow: 5px 5px 5px rgb(170, 170, 170); */
-    margin-bottom: 0.5rem;
     img {
       border-radius: 5%;
+      box-shadow: 2px 2px 2px #888888;
     }
   }
   h3 {
     text-align: center;
   }
-}
-
-.impact-box {
-  padding: 10rem;
-  max-width: 100rem;
-  margin: 0 auto;
 }
 
 .section-about {
@@ -280,9 +298,14 @@ a:active {
   }
   table {
     margin-bottom: 1rem;
+    border-spacing: 0;
+    max-width: 25rem;
+  }
+  td {
+    vertical-align: top;
   }
   i {
-    padding-right: 1rem;
+    min-width: 2rem;
   }
 
   a {
@@ -294,51 +317,53 @@ a:active {
     color: #202124;
   }
   a:hover {
-    background-color: yellow;
+    background-color: #ffee2e;
     color: #202124;
     border-radius: 0.5rem;
   }
 }
-.project-categories.project-tag {
-  padding: 1rem;
-}
+
 /* 2 Mobile ==================== */
 
 .section-projects {
-  h2 {
-    text-align: center;
-  }
+  padding-bottom: 5rem;
 }
 
-.project {
-  max-width: 20rem;
+.section-projects h2 {
+  padding: 0 0 2rem 3rem;
 }
 
 .section-about {
-  padding: 0 3rem;
-
+  margin: 0 3rem;
   .section-about-comment {
     padding-bottom: 0.5rem;
   }
-  h2 {
-    text-align: left;
+  .section-contact h4 {
+    padding: 1rem 0;
   }
 }
 
 /* 3 Desktop ==================== */
+
 @media (min-width: 50em) {
+  .site-main {
+    margin-left: 8rem;
+    margin-right: 8rem;
+  }
   .section-projects {
     max-width: 100rem;
     margin: 0 auto;
-    h2 {
-      text-align: left;
-      padding: 0 5rem;
-    }
+  }
+
+  .project-wrapper {
+    gap: 2rem;
   }
 
   .section-about {
-    max-width: 100rem;
+    max-width: 80rem;
     margin: 0 auto;
+    padding-top: 5rem;
+    padding-left: 3rem;
     .section-about-box {
       max-width: 100rem;
       display: flex;
@@ -347,9 +372,8 @@ a:active {
       div {
         width: calc(50% - 1rem);
       }
-      p,
-      img {
-        max-width: 35rem;
+      p {
+        max-width: 36rem;
       }
     }
   }
