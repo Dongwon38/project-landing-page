@@ -82,6 +82,10 @@ a:active {
   transition: 0.3s;
 }
 
+a:focus {
+  color: #ffee2e;
+}
+
 a {
   line-height: 1;
 }
@@ -127,7 +131,6 @@ a:active {
 .section-projects,
 .section-header {
   position: relative;
-  margin-bottom: 5rem;
 }
 
 .section-header::after,
@@ -170,11 +173,11 @@ a:active {
   display: flex;
   justify-content: center;
   align-items: center;
-  img {
-    padding: 0 auto;
-    margin: 0.5rem;
-    max-width: 2.5rem;
-  }
+}
+
+.site-logo img {
+  margin: 0.5rem;
+  max-width: 2.5rem;
 }
 
 .site-nav ul {
@@ -187,11 +190,8 @@ a:active {
 /* 2 Mobile ==================== */
 
 .site-nav {
-  .mobile {
-    display: flex;
-    li {
-      padding: 0 0.3rem;
-    }
+  .mobile li {
+    padding: 0 0.3rem;
   }
   .desktop {
     display: none;
@@ -199,7 +199,7 @@ a:active {
 }
 
 /* 3 Desktop ==================== */
-@media (min-width: 40em) {
+@media (min-width: 30em) {
   .site-nav {
     .mobile {
       display: none;
@@ -274,11 +274,9 @@ h1 {
       background-color: #cd016d;
     }
   }
-  .project-box {
-    img {
-      border-radius: 5%;
-      box-shadow: 2px 2px 2px #888888;
-    }
+  .project-box img {
+    border-radius: 5%;
+    box-shadow: 2px 2px 0px #888888;
   }
   h3 {
     text-align: center;
@@ -326,7 +324,8 @@ h1 {
 /* 2 Mobile ==================== */
 
 .section-projects {
-  padding-bottom: 5rem;
+  padding-top: 4rem;
+  padding-bottom: 3rem;
 }
 
 .section-projects h2 {
@@ -334,13 +333,15 @@ h1 {
 }
 
 .section-about {
+  padding-top: 4rem;
   margin: 0 3rem;
-  .section-about-comment {
-    padding-bottom: 0.5rem;
-  }
-  .section-contact h4 {
-    padding: 1rem 0;
-  }
+}
+
+.section-about-comment {
+  padding-bottom: 0.5rem;
+}
+.section-contact h4 {
+  padding: 1rem 0;
 }
 
 /* 3 Desktop ==================== */
@@ -384,13 +385,13 @@ h1 {
 /* 1 general ==================== */
 .site-footer {
   background-color: #000;
+}
 
-  .link-icon {
-    display: flex;
-    justify-content: flex-start;
-    gap: 1rem;
-    font-size: 1.5rem;
-  }
+.link-icon {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  font-size: 1.5rem;
 }
 
 /* 2 Mobile ==================== */
