@@ -242,6 +242,7 @@ h1 {
   max-width: 15rem;
   margin-bottom: 3rem;
   .project-categories {
+    display: flex;
     margin-bottom: 0.25rem;
     .project-skills,
     .project-concepts {
@@ -249,13 +250,13 @@ h1 {
     }
     .project-tag {
       font-size: 0.5rem;
-      padding: 0.3rem 0.25rem;
+      padding: 0.3rem 0.1rem;
       min-width: 2rem;
       text-align: center;
       color: white;
       text-shadow: none;
       border-radius: 5%;
-      margin: 0.15rem 0.15rem;
+      margin: 0.15rem 0.1rem;
     }
 
     .htmlcss {
@@ -272,8 +273,11 @@ h1 {
     }
   }
   .project-box img {
+    border: 2px solid #505050;
     border-radius: 5%;
     box-shadow: 2px 2px 0px #888888;
+
+    object-fit: cover;
   }
   h3 {
     text-align: center;
